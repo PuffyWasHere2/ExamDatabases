@@ -1,0 +1,9 @@
+UNF: DB(Staffno, dentistName,[(patientNo, patientName, appointment, surgeryNo)])
+
+1NF: DB(STAFFNO, dentistName, patietNo, patientName, DATE, TIME, SurgeryNo)
+
+2NF: DB1(STAFFNO, dentistName), DB2(STAFFNO, patientNo, patientName, DATE, TIME, SurgeryNo)
+
+3NF: DB1(STAFFNO, dentistName), DB2(PATIENTNO, patientName), DB3(STAFFNO, patientNo, DATE, TIME, surgeryNo)
+
+3NF=BCNF
