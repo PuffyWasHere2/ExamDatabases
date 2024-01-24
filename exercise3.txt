@@ -1,0 +1,7 @@
+1NF: (PATIENTNO, full name, WARDNO, ward name, DRUGNO, name, desc, dosage, method, START DATE, units per day, finish date)
+
+2NF: DB1(PATIENTNO, full name), DB2(WARDNO, ward name), DB3(DRUGNO, name, desc, dosage, method), DB4(START, PATIENTNO, DRUGNO, units, finish), DB5(PATIENTNO, WARDNO, DRUGNO, START DATE)
+
+3NF: DB1(PATIENTNO, full name), DB2(WARDNO, ward name), DB3(START,DRUGNO,finish, units, PATIENTNO), DB5(START,PATIENTNO,WARDNO,DRUGNO), BD6(NAME, desc, dosage, method) BD7(DRUGNO, name)
+
+BCNF=3NF
