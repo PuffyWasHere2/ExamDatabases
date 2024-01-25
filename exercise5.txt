@@ -1,0 +1,24 @@
+select guestname, guestaddress from guest where guestaddress like "%London" order by guestname;
+
+select * from room where type="double" or type="family" and price < 40 order by price;
+
+select * from booking where dateto is null;
+
+select avg(price) as averageprice from room;
+
+select sum(price) as revenuepernight from room where type="double";
+
+select count(*) as bookings_august from booking where month(datefrom)=8;
+
+select room.price, room.type from room join hotel on room.hotelno=hotel.hotelno where hotel.hotelname="The Tower Hotel";
+
+select distinct(guest.guestname) as Towerhotelguests from guest join booking on guest.guestno=booking.guestno join hotel on booking.hotelno=hotel.hotelno where hotel.hotelname="The Tower Hotel";
+
+select hotel.hotelname, count(roomno) as no_rooms from room join hotel on room.hotelno=hotel.hotelno where hotel.city="London" group by hotelname;
+
+select hotel.hotelname, room.type, count(booking.roomno) from room join hotel on room.hotelno=hotel.hotelno join booking on room.roomno=booking.roomno where hotel.city="London" group by room.hotelno,room.roomno;
+
+SELECT hotelname, count(booking.roomno) AS AantalVanroomno, room.type, booking.roomno
+FROM (booking INNER JOIN hotel ON booking.hotelno = hotel.hotelno) INNER JOIN room ON (room.hotelno = booking.hotelno) AND (room.roomno = booking.roomno) AND (hotel.hotelno = room.hotelno) GROUP BY booking.hotelno, hotel.city, room.type, booking.roomno HAVING (((hotel.city)="London")) ORDER BY Count(booking.roomno) DESC;
+
+update room set price=price+((price/100)*5)
