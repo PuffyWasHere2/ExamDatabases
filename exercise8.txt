@@ -1,0 +1,27 @@
+curl 'https://rest.ensembl.org/sequence/region/human/13:32889000..32891000:1?mask=soft' -H 'Content-type:text/x-fasta'
+
+curl 'https://rest.ensembl.org/sequence/region/human/13:32889000..32891000:1?mask=hard' -H 'Content-type:text/x-fasta'
+
+4 repeat regions
+
+ENSG00000160791
+
+curl 'https://rest.ensembl.org/homology/id/human/ENSG00000160791?type=orthologues;target_species=chimpanzee;format=condensed' -H 'Content-type:text/xml'
+<homologies id="ENSPTRG00000014848" method_link_type="ENSEMBL_ORTHOLOGUES" protein_id="ENSPTRP00000025599" species="pan_troglodytes" taxonomy_level="Homininae" type="ortholog_one2one" /
+
+curl 'https://rest.ensembl.org/lookup/id' -H 'Content-type:application/json' -H 'Accept:application/json' -X POST -d '{ "ids" : ["ENST00000001146"] }'
+curl 'https://rest.ensembl.org/sequence/id/ENSG00000003137?type=genomic' -H 'Content-type:text/x-fasta'
+
+curl 'https://rest.ensembl.org/sequence/id/ENSG00000002587?type=genomic' -H 'Content-type:text/x-fasta'
+
+curl 'https://rest.ensembl.org/sequence/id/ENSG00000003056?type=genomic' -H 'Content-type:text/x-fasta'
+
+curl 'https://rest.ensembl.org/sequence/region/human/7:35182..35431:1?' -H 'Content-type:text/x-fasta'
+>chromosome:GRCh38:7:35182:35431:1
+CCCCTGTGGACACTGCCCCTGGGCAGGCCATGAATCTCCTCTGCTCCCACACTCTAGAGT
+TCAACGGGTCTCAGGGGCTCTGCCTGAGGACTGCCCTTCAACCAGGTATTCGTAATTTCC
+CCAAGACCCAGGCTTGCTGAGTCACTCAGTTACCTGAATGCTTTTTTCACAAAGGGATGA
+CTGTGCTGCTCCGTCTTCCTTCTTTTTTGTTTGCAAGGCCACAGGGAAATCTGGATCCTC
+TGGTGAAAAA
+
+
